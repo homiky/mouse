@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мымыши</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Мымыши</h1>
+		
+        <div class="grid-size-fields">
+            <label for="gridWidth">Ширина сетки: </label>
+            <input type="number" id="gridWidth" value="16" min="1">
+            <label for="gridHeight">Высота сетки: </label>
+            <input type="number" id="gridHeight" value="16" min="1">
+        </div>
+
+        <div class="coordinate-fields">
+            <label for="startX">Начальный X: </label>
+            <input type="number" id="startX" value="1">
+            <label for="startY">Начальный Y: </label>
+            <input type="number" id="startY" value="1">
+        </div>
+
+        <label for="colorPicker">Выберите цвет:</label>
+        <input type="color" id="colorPicker" value="#000000">
+
+        <label for="uploadImage">Загрузить изображение:</label>
+        <input type="file" id="uploadImage" accept="image/png, image/jpeg">
+        <canvas id="imageCanvas" style="display:none;"></canvas>
+		
+        <label for="useAltFunction">
+			<input type="checkbox" id="useAltFunction"> Цвета NotPixel
+		</label>
+		
+        <button id="createGrid" class="drawing-button">Создать сетку</button>
+        <button id="clearGrid" class="drawing-button">Очистить сетку</button>
+        <button id="saveImage" class="drawing-button">Сохранить как шаблон</button>
+		<button id="saveAsMap" class="drawing-button">Сохранить как карту</button>
+
+
+        <div class="color-palette-wrapper">
+            <div class="color-palette-container" id="colorPaletteContainer">
+            </div>
+        </div>
+		
+		<div class="grid-container">
+			<div class="controls-container">
+				<button id="zoomIn" class="drawing-button">
+					<img src="plus.png">
+				</button>
+				<button id="zoomOut" class="drawing-button">
+					<img src="minus.png">
+				</button>
+				<button id="fillTool" class="drawing-button">
+					<img src="painter.png">
+				</button>
+				<button id="undoButton" class="drawing-button">
+					<img src="undo.png">
+				</button>
+			</div>
+			<div id="grid"></div>
+		</div>
+
+        <p>Наведи на пиксель для получения координат: <span id="coordinates"></span></p>
+    </div>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+
+	<div class="telegram-footer">
+		<div class="links-container">
+			<a href="https://t.me/mouscrypto" target="_blank" class="telegram-link">
+				<img src="images/telegram.png" alt="Telegram" class="telegram-logo"> t.me/mouscrypto
+			</a>
+			<a href="https://t.me/nutsfarm_bot/nutscoin?startapp=ref_UGYFTBEGXQNZPYI" target="_blank" class="telegram-link">
+				<img src="images/coin.png" alt="Telegram" class="telegram-logo"> NutsFarm
+			</a>
+			<a href="https://t.me/mouscrypto" target="_blank" class="telegram-link">
+				<img src="images/telegram.png" alt="Telegram" class="telegram-logo"> t.me/mouscrypto
+			</a>
+			<a href="https://t.me/nutsfarm_bot/nutscoin?startapp=ref_UGYFTBEGXQNZPYI" target="_blank" class="telegram-link">
+				<img src="images/coin.png" alt="Telegram" class="telegram-logo"> NutsFarm
+			</a>
+			<a href="https://t.me/mouscrypto" target="_blank" class="telegram-link">
+				<img src="images/telegram.png" alt="Telegram" class="telegram-logo"> t.me/mouscrypto
+			</a>
+		</div>
+	</div>
+	
+    <script type="text/javascript">
+        (function() { 
+            var d = document, s = d.createElement('script'), g = 'getElementsByTagName'; 
+            s.type = 'text/javascript'; 
+            s.charset='UTF-8'; 
+            s.async = true; 
+            s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://socpublic.com/themes/assets/global/scripts/visit_js.js'; 
+            var h=d[g]('body')[0]; 
+            h.appendChild(s); 
+        })();
+    </script>	
+	
+    <script src="script.js"></script>
+	
+</body>
+</html>

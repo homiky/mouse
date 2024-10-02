@@ -1,0 +1,215 @@
+/* Общий стиль для всего сайта */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Цвет фона как у тёмной темы */
+    color: #e0e0e0; /* Светлый текст */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Заголовок */
+/* Заголовок */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    background: linear-gradient(90deg, #ff007f, #00aaff, #ff007f);
+    background-size: 300% 100%; /* Увеличиваем размер для анимации */
+    animation: gradientAnimation 5s ease infinite; /* Анимация градиента */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em; /* Увеличьте размер шрифта, если нужно */
+}
+
+
+/* Скрытие вкладок */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block; /* Отображение активной вкладки */
+}
+
+/* Сетка пикселей */
+.grid-container {
+	transform: translateX(-40px);
+    display: flex;
+    justify-content: center; /* Центрирование по оси X */
+
+}
+
+#grid {
+    display: grid;
+    gap: 1px;
+}
+
+/* Подложка для палитры цветов */
+.color-palette-wrapper {
+    background-color: #2a2a2a; /* Цвет фона подложки совпадает с кнопками */
+    border-radius: 10px; /* Закругления для подложки */
+    padding: 10px; /* Отступы вокруг палитры */
+    display: block; /* Чтобы подложка обрамляла палитру */
+    margin: 20px auto; /* Центрирование подложки */
+	width: fit-content; 
+}
+
+/* Цветовая палитра */
+.color-palette-container {
+    display: grid;
+    grid-template-columns: repeat(10, 30px); /* 10 цветов в ширину */
+    grid-template-rows: repeat(3, 30px); /* 3 цвета в высоту */
+    gap: 5px; /* Пробел между цветами */
+    justify-content: center; /* Центрирование по оси X */
+}
+
+.color-box {
+    width: 30px; /* Ширина цветного квадрата */
+    height: 30px; /* Высота цветного квадрата */
+    cursor: pointer; /* Указатель при наведении */
+    border-radius: 5px; /* Закругления углов */
+}
+
+/* Поля ввода и выбора цвета */
+input[type="number"], input[type="color"], input[type="file"] {
+    background-color: #2a2a2a; /* Тёмно-серый фон */
+    border: 2px solid #303030; /* Тёмная рамка */
+    color: #ffffff; /* Белый текст */
+    padding: 8px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+/* Поля ввода при наведении */
+input[type="number"]:hover, input[type="color"]:hover {
+    background-color: #00aaff; /* Синий фон при наведении */
+    border: 2px solid #1a1a1a; /* Чуть светлее рамка */
+}
+
+/* Кнопка */
+button {
+    background-color: #2a2a2a; /* Тёмно-серый фон */
+    border: 2px solid #303030; /* Тёмная рамка */
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+/* Кнопка при наведении */
+button:hover {
+    background-color: #00aaff; /* Синий фон при наведении */
+    border: 2px solid #1a1a1a; /* Чуть светлее рамка */
+    transform: scale(1.05);
+}
+
+button.active {
+  background-color: #999;
+  border-color: #555;
+  color: white;
+}
+
+/* Пиксель */
+.pixel {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #272727; /* Тёмная синяя рамка */
+    display: inline-block;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+/* Пиксель при наведении */
+.pixel:hover {
+    outline: 1px solid #00aaff; /* Яркая синяя рамка при наведении */
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: column; /* Кнопки расположены вертикально */
+    margin-right: 0px; /* Отступ между кнопками и сеткой */
+	transform: translateX(-20px);
+}
+
+.drawing-button {
+    margin-bottom: 5px; /* Отступ между кнопками */
+}
+
+.controls-container img {
+    width: 25px; /* Ширина изображения */
+    height: 25px; /* Высота изображения */
+}
+
+/* Текст отображения координат */
+#coordinates {
+    color: #00aaff; /* Синий цвет для текста координат */
+    font-weight: bold;
+    margin-left: 10px;
+	margin-bottom: 40px;
+}
+
+/* Общий контейнер для центрирования контента */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+	margin-bottom: 100px;
+	
+}
+
+/* Подвал с Telegram */
+.telegram-footer {
+    display: flex; /* Используем Flexbox для выравнивания */
+    justify-content: space-between; /* Равномерное распределение */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    padding: 15px 20px; /* Отступы */
+    background-color: #1e1d1d; /* Цвет фона подложки */
+    position: fixed; /* Фиксированное положение */
+    bottom: 0; /* Прикрепление к низу окна */
+    left: 0; /* Прикрепление к левому краю */
+    width: 100%; /* Ширина на весь экран */
+}
+
+.links-container {
+    display: flex; /* Используем Flexbox для ссылок */
+    justify-content: space-around; /* Равномерное распределение ссылок */
+    width: 100%; /* Чтобы занимали всю доступную ширину */
+	margin-left: -30px;
+}
+
+.telegram-link {
+    display: flex; /* Flexbox для выравнивания изображения и текста */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    background: linear-gradient(90deg, #ff007f, #00aaff, #ff007f);
+    background-size: 300% 100%; /* Увеличиваем размер для анимации */
+    animation: gradientAnimation 5s ease infinite; /* Анимация градиента */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px; /* Убедитесь, что размер шрифта правильный */
+    font-weight: bold; /* Жирный шрифт */
+    padding: 10px; /* Отступы для улучшения видимости */
+}
+
+.telegram-logo {
+    width: 30px; /* Установите ширину изображения */
+    height: 30px; /* Установите высоту изображения */
+    margin-right: 5px; /* Отступ между изображением и текстом */
+}
